@@ -1,6 +1,8 @@
 services:
   - type: web
     name: sentiment-analysis-api
-    runtime: python-3.12.7
+    plan: free
+    env: python
+    pythonVersion: "3.12.7"
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
